@@ -27,7 +27,7 @@
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-light);
     color: var(--text-main);
     line-height: 1.5;
@@ -480,16 +480,17 @@ main {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 1rem;
-    padding: 0.5rem 0.25rem 1.5rem 0.25rem;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
+    padding: 0.5rem 1rem 1.5rem 1rem; /* Matched to main content padding */
+    margin: 0 -1rem; /* Pull back to edges so cards can bleed if needed */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
 }
 .slider-container::-webkit-scrollbar {
-    display: none; /* Chrome/Safari/Brave */
+    display: none;
 }
 .slider-item {
-    flex: 0 0 88%; /* Shows most of the card and a peek of the next one */
+    flex: 0 0 calc(100% - 2rem); /* Fits the exact width of the tithe card */
     scroll-snap-align: center;
     transition: transform 0.3s ease;
 }

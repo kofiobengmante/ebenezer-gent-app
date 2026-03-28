@@ -362,7 +362,9 @@ function renderAuth(mainContent) {
     mainContent.innerHTML = `
         <div class="flex-col items-center justify-center p-4 mt-6">
             <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 2rem; width: 100%;">
-                <img src="https://pcgonline.org/wp-content/uploads/2021/04/pcglogo.png" alt="PCG Logo" style="height: 6rem; margin-bottom: 1rem; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">
+                <div style="width: 6.5rem; height: 6.5rem; overflow: hidden; display: flex; align-items: center; justify-content: center; background: white; border-radius: 50%; border: 4px solid var(--pcg-blue); margin-bottom: 1rem; box-shadow: var(--shadow-md);">
+                    <img src="https://pcgonline.org/wp-content/uploads/2021/04/pcglogo.png" alt="PCG Logo" style="height: 110%; width: auto; object-fit: cover;">
+                </div>
                 <h1 style="color: var(--pcg-blue); font-size: 1.6rem; margin: 0; font-weight: 800; letter-spacing: -0.02em;">PCG Ebenezer Gent</h1>
                 <p style="font-size: 0.95rem; margin-top: 0.25rem; font-weight: 600; color: var(--pcg-blue); opacity: 0.9;">Presbyterian Church of Ghana</p>
             </div>
@@ -1730,8 +1732,8 @@ window.scrollSlider = function(direction) {
     const slider = document.getElementById('event-slider');
     if(!slider) return;
     
-    // Each slide is roughly 88% width + 16px gap
-    const slideWidth = slider.offsetWidth * 0.88 + 16;
+    // Each slide is exactly (100% - total padding) + 16px gap
+    const slideWidth = slider.offsetWidth + 16;
     slider.scrollBy({
         left: direction * slideWidth,
         behavior: 'smooth'
