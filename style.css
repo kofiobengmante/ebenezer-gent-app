@@ -490,7 +490,7 @@ main {
     display: none;
 }
 .slider-item {
-    flex: 0 0 calc(100% - 2rem); /* Fits the exact width of the tithe card */
+    flex: 0 0 calc(100% - 2rem); /* Exact width to match standard cards */
     scroll-snap-align: center;
     transition: transform 0.3s ease;
 }
