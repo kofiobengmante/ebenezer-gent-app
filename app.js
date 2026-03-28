@@ -617,23 +617,6 @@ function renderHome(mainContent) {
         </div>
 
         <div class="flex flex-col gap-4 mb-8" style="display: flex; flex-flow: row wrap;">
-            <div style="flex: 1; min-width: 250px;">
-                <div class="card mb-4" style="height: auto;">
-                    <h3 class="mb-3" style="font-size: 1.1rem; color: var(--pcg-blue);">Stay Connected</h3>
-                    <div class="flex gap-4 mb-2">
-                        ${churchInfo.facebookUrl ? `<a href="${churchInfo.facebookUrl}" target="_blank" class="icon-btn" style="background: #1877F2; color:white; width:2.5rem; height:2.5rem; border-radius:10px;"><i class="ph ph-facebook-logo" style="font-size:1.2rem;"></i></a>` : ''}
-                        ${churchInfo.youtubeUrl ? `<a href="${churchInfo.youtubeUrl}" target="_blank" class="icon-btn" style="background: #FF0000; color:white; width:2.5rem; height:2.5rem; border-radius:10px;"><i class="ph ph-youtube-logo" style="font-size:1.2rem;"></i></a>` : ''}
-                        ${churchInfo.tiktokUrl ? `<a href="${churchInfo.tiktokUrl}" target="_blank" class="icon-btn" style="background: #000000; color:white; width:2.5rem; height:2.5rem; border-radius:10px;"><i class="ph ph-tiktok-logo" style="font-size:1.2rem;"></i></a>` : ''}
-                    </div>
-                </div>
-
-                <div class="card" style="height: auto;">
-                    <h3 class="mb-2" style="font-size: 1.1rem; color: var(--pcg-blue);"><i class="ph ph-map-pin"></i> Visit Us</h3>
-                    <p style="font-size: 0.85rem; margin-bottom: 0.5rem; line-height:1.4;">${churchInfo.address}</p>
-                    <p style="font-size: 0.85rem; color: var(--pcg-blue); font-weight: bold;"><i class="ph ph-phone"></i> ${churchInfo.tel}</p>
-                </div>
-            </div>
-
             <div style="flex: 1.2; min-width: 250px;">
                 <div class="card p-0" style="overflow: hidden; height: 100%;">
                     <div class="p-4" style="border-bottom: 1px solid var(--border-color); background: var(--bg-light);">
@@ -650,6 +633,23 @@ function renderHome(mainContent) {
                             </div>
                         </div>
                     `).join('') || '<p class="p-4 text-center text-muted">No activities set.</p>'}
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 250px;">
+                <div class="card mb-4" style="height: auto;">
+                    <h3 class="mb-3" style="font-size: 1.1rem; color: var(--pcg-blue);">Stay Connected</h3>
+                    <div class="flex gap-4 mb-2">
+                        ${churchInfo.facebookUrl ? `<a href="${churchInfo.facebookUrl}" target="_blank" class="icon-btn" style="background: #1877F2; color:white; width:2.5rem; height:2.5rem; border-radius:10px;"><i class="ph ph-facebook-logo" style="font-size:1.2rem;"></i></a>` : ''}
+                        ${churchInfo.youtubeUrl ? `<a href="${churchInfo.youtubeUrl}" target="_blank" class="icon-btn" style="background: #FF0000; color:white; width:2.5rem; height:2.5rem; border-radius:10px;"><i class="ph ph-youtube-logo" style="font-size:1.2rem;"></i></a>` : ''}
+                        ${churchInfo.tiktokUrl ? `<a href="${churchInfo.tiktokUrl}" target="_blank" class="icon-btn" style="background: #000000; color:white; width:2.5rem; height:2.5rem; border-radius:10px;"><i class="ph ph-tiktok-logo" style="font-size:1.2rem;"></i></a>` : ''}
+                    </div>
+                </div>
+
+                <div class="card" style="height: auto;">
+                    <h3 class="mb-2" style="font-size: 1.1rem; color: var(--pcg-blue);"><i class="ph ph-map-pin"></i> Visit Us</h3>
+                    <p style="font-size: 0.85rem; margin-bottom: 0.5rem; line-height:1.4;">${churchInfo.address}</p>
+                    <p style="font-size: 0.85rem; color: var(--pcg-blue); font-weight: bold;"><i class="ph ph-phone"></i> ${churchInfo.tel}</p>
                 </div>
             </div>
         </div>
