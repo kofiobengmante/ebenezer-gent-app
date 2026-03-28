@@ -362,7 +362,7 @@ function renderAuth(mainContent) {
     mainContent.innerHTML = `
         <div class="flex-col items-center justify-center p-4 mt-6">
             <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 2rem; width: 100%;">
-                <img src="auth-logo.png" alt="PCG Official Logo" style="height: 12rem; width: auto; margin-bottom: 1.5rem; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15));">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Presbyterian_Church_of_Ghana_Crest.png" alt="PCG Official Logo" style="height: 12rem; width: auto; margin-bottom: 1.5rem; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15));">
                 <h1 style="color: var(--pcg-blue); font-size: 1.8rem; margin: 0; font-weight: 800; letter-spacing: -0.02em;">PCG Ebenezer Gent</h1>
                 <p style="font-size: 1rem; margin-top: 0.35rem; font-weight: 600; color: var(--pcg-blue); opacity: 0.9;">Presbyterian Church of Ghana</p>
             </div>
