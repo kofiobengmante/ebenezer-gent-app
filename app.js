@@ -361,10 +361,10 @@ let authMode = 'login';
 function renderAuth(mainContent) {
     mainContent.innerHTML = `
         <div class="flex-col items-center justify-center p-4 mt-6">
-            <div class="logo-container" style="justify-content: center; flex-direction: column; text-align: center; margin-bottom: 2rem;">
-                <img src="https://pcgonline.org/wp-content/uploads/2021/04/pcglogo.png" alt="PCG Logo" style="height: 5rem; margin-bottom: 1rem;">
-                <h1 style="color: var(--pcg-blue); font-size: 1.5rem;">Ebenezer Gent</h1>
-                <p class="text-muted">Presbyterian Church of Ghana</p>
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 2rem; width: 100%;">
+                <img src="https://pcgonline.org/wp-content/uploads/2021/04/pcglogo.png" alt="PCG Logo" style="height: 6rem; margin-bottom: 1rem; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">
+                <h1 style="color: var(--pcg-blue); font-size: 1.6rem; margin: 0; font-weight: 800; letter-spacing: -0.02em;">PCG Ebenezer Gent</h1>
+                <p class="text-muted" style="font-size: 0.9rem; margin-top: 0.25rem; font-weight: 500;">Presbyterian Church of Ghana</p>
             </div>
             <div class="card w-full">
                 <h2 class="mb-4" style="font-size:1.25rem;">${authMode === 'login' ? 'Member Login' : 'Create Account'}</h2>
