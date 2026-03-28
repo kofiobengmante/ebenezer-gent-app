@@ -606,8 +606,8 @@ function renderHome(mainContent) {
         <div class="card mb-6" style="background: linear-gradient(135deg, var(--pcg-blue), var(--pcg-blue-light)); color: white;">
             <div class="flex items-center justify-between">
                 <div>
-                    <h3 style="color:white; margin-bottom:0.25rem; font-size: 1rem;">Donate your gift here</h3>
-                    <p style="font-size:0.75rem; color:rgba(255,255,255,0.8);">Pay your tithe & offering securely</p>
+                    <h3 style="color:white; margin-bottom:0.25rem; font-weight: 700; font-size: 1.1rem;">Donate your gift here</h3>
+                    <p style="font-size:0.8rem; color:rgba(255,255,255,0.85); font-weight: 500;">Pay your tithe & offering securely</p>
                 </div>
                 <div style="background: rgba(255,255,255,0.2); padding: 0.5rem; border-radius: var(--radius-full);">
                     <i class="ph ph-wallet" style="font-size: 1.5rem;"></i>
