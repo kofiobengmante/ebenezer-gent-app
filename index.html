@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebenezer Congregation Gent | PCG</title>
+    <!-- PWA Setup -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#004080">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon-512.png">
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for premium aesthetic -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Main Application Shell -->
+        <header id="main-header" class="hidden">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="https://pcgonline.org/wp-content/uploads/2021/04/pcglogo.png" alt="PCG Logo" style="height: 3rem; width: auto; object-fit: contain;">
+                    <div>
+                        <h1>Ebenezer Gent</h1>
+                        <p>Presbyterian Church of Ghana</p>
+                    </div>
+                </div>
+                <div class="user-profile" onclick="navigate('profile')" style="cursor: pointer;">
+                    <div class="avatar">
+                        <i class="ph ph-user"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <!-- Content gets injected here by router -->
+        </main>
+
+        <!-- Persistent Audio Player -->
+        <div id="audio-player-container" class="hidden">
+            <div class="player-info">
+                <div style="flex-grow: 1;">
+                    <h4 id="player-title" style="margin: 0; font-size: 0.9rem;">Sermon Title</h4>
+                    <span id="player-speaker" class="text-muted" style="font-size: 0.75rem;">Speaker Name</span>
+                    <span id="player-live-badge" class="badge hidden" style="background: red; font-size: 0.6rem; margin-left: 0.5rem;">LIVE</span>
+                </div>
+                <button class="icon-btn" onclick="document.getElementById('audio-player-container').classList.add('hidden'); document.getElementById('main-audio-element').pause();" style="color: var(--text-muted);"><i class="ph ph-x"></i></button>
+            </div>
+            <audio id="main-audio-element" controls style="width: 100%; height: 2rem;"></audio>
+        </div>
+
+        <nav id="bottom-nav" class="hidden">
+            <!-- Navigation items injected by JS -->
+        </nav>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
+
+    <script src="app.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('Service Worker registered', reg))
+            .catch(err => console.error('Service Worker registration failed', err));
+        });
+      }
+    </script>
+</body>
+</html>

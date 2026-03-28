@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "ebenezer-gent-app",
+  "builds": [
+    {
+      "src": "**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/sw.js", "continue": true, "headers": { "cache-control": "public, max-age=0, must-revalidate" } },
+    { "src": "/manifest.json", "continue": true, "headers": { "cache-control": "public, max-age=0, must-revalidate" } },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}

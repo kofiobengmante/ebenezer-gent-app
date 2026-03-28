@@ -1,0 +1,23 @@
+{
+  "name": "Ebenezer Congregation Gent",
+  "short_name": "Ebenezer Gent",
+  "description": "Official App for Ebenezer Congregation Gent, Presbyterian Church of Ghana.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#004080",
+  "icons": [
+    {
+      "src": "./icon-512.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
