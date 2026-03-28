@@ -362,11 +362,9 @@ function renderAuth(mainContent) {
     mainContent.innerHTML = `
         <div class="flex-col items-center justify-center p-4 mt-6">
             <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 2rem; width: 100%;">
-                <div style="width: 6.5rem; height: 6.5rem; overflow: hidden; display: flex; align-items: center; justify-content: center; background: white; border-radius: 50%; border: 4px solid var(--pcg-blue); margin-bottom: 1rem; box-shadow: var(--shadow-md);">
-                    <img src="https://pcgonline.org/wp-content/uploads/2021/04/pcglogo.png" alt="PCG Logo" style="height: 110%; width: auto; object-fit: cover;">
-                </div>
-                <h1 style="color: var(--pcg-blue); font-size: 1.6rem; margin: 0; font-weight: 800; letter-spacing: -0.02em;">PCG Ebenezer Gent</h1>
-                <p style="font-size: 0.95rem; margin-top: 0.25rem; font-weight: 600; color: var(--pcg-blue); opacity: 0.9;">Presbyterian Church of Ghana</p>
+                <img src="auth-logo.png" alt="PCG Official Logo" style="height: 12rem; width: auto; margin-bottom: 1.5rem; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15));">
+                <h1 style="color: var(--pcg-blue); font-size: 1.8rem; margin: 0; font-weight: 800; letter-spacing: -0.02em;">PCG Ebenezer Gent</h1>
+                <p style="font-size: 1rem; margin-top: 0.35rem; font-weight: 600; color: var(--pcg-blue); opacity: 0.9;">Presbyterian Church of Ghana</p>
             </div>
             <div class="card w-full">
                 <h2 class="mb-4" style="font-size:1.25rem;">${authMode === 'login' ? 'Member Login' : 'Create Account'}</h2>
