@@ -591,7 +591,7 @@ function renderHome(mainContent) {
                         </p>
                     </div>
                 ` : `
-                    <p class="text-muted" style="font-style: italic; font-size: 0.85rem; margin-top:0.5rem;">"The Lord is my shepherd, I lack nothing." - Psalm 23</p>
+                    <p class="text-muted" style="font-weight: 700; font-size: 0.9rem; margin-top:0.6rem; color: var(--pcg-blue);">Theme 2026: Celebrating our heritage: Building on the foundation already laid.</p>
                 `}
             </div>
             <div class="flex gap-2">
