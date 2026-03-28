@@ -43,6 +43,24 @@ let editingAlmanacId = null;
 let isBulkHymnMode = false;
 let isNotificationsEnabled = localStorage.getItem('pcg_notif_enabled') === 'true';
 
+// ---- Twi/Akan Character Cleaning Utility ----
+window.cleanTwiText = function(text) {
+    if (!text) return '';
+    return text
+        .replace(/1/g, 'ɛ')
+        .replace(/3/g, 'ɛ')
+        .replace(/4/g, 'ɔ')
+        .replace(/\$/g, 'Ɛ')
+        .replace(/\^/g, 'Ɔ');
+}
+
+window.triggerTwiFix = function(elementId) {
+    const el = document.getElementById(elementId);
+    if(el) {
+        el.value = cleanTwiText(el.value);
+    }
+}
+
 // ---- Global Admin Utilities ----
 window.cancelEdit = function() {
     editingEventId = null;
@@ -1156,6 +1174,10 @@ function renderAdmin(mainContent) {
                 <div class="form-group" style="flex:1;"><input type="text" id="add-ev-loc" class="form-control" placeholder="Location"></div>
             </div>
             <div class="form-group">
+                <div class="flex justify-between items-center mb-1">
+                    <label style="font-size:0.75rem; font-weight:bold; color:var(--pcg-blue);"><i class="ph ph-note"></i> Detailed Description</label>
+                    <button type="button" class="btn-text" onclick="triggerTwiFix('add-ev-desc')" style="color: var(--pcg-blue); font-size: 0.7rem; font-weight: 700; background:none; border:none; cursor:pointer;">✨ Auto-Fix Twi</button>
+                </div>
                 <textarea id="add-ev-desc" class="form-control" placeholder="Detailed Description..." rows="3"></textarea>
             </div>
             <div class="form-group">
@@ -1285,6 +1307,10 @@ function renderAdmin(mainContent) {
                 </select>
             </div>
             <div class="form-group">
+                <div class="flex justify-between items-center mb-1">
+                    <label style="font-size:0.75rem; font-weight:bold; color:var(--pcg-blue);"><i class="ph ph-music-notes"></i> Hymn Lyrics</label>
+                    <button type="button" class="btn-text" onclick="triggerTwiFix('hymn-content')" style="color: var(--pcg-blue); font-size: 0.7rem; font-weight: 700; background:none; border:none; cursor:pointer;">✨ Auto-Fix Twi</button>
+                </div>
                 <textarea id="hymn-content" class="form-control" placeholder="Hymn Lyrics..." rows="6"></textarea>
             </div>
             <div class="flex gap-2">
@@ -1425,7 +1451,7 @@ window.addEvent = async function() {
         day: document.getElementById('add-ev-day').value,
         time: document.getElementById('add-ev-time').value,
         location: document.getElementById('add-ev-loc').value,
-        description: document.getElementById('add-ev-desc').value,
+        description: cleanTwiText(document.getElementById('add-ev-desc').value),
         imageUrl: finalImageUrl,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
     };
@@ -1529,7 +1555,7 @@ window.addHymn = async function() {
         number: parseInt(document.getElementById('hymn-num').value) || 0,
         title: document.getElementById('hymn-title').value,
         lang: document.getElementById('hymn-lang').value,
-        content: document.getElementById('hymn-content').value,
+        content: cleanTwiText(document.getElementById('hymn-content').value),
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
     };
 
