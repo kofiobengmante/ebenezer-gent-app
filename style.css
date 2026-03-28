@@ -480,8 +480,7 @@ main {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 1rem;
-    padding: 0.5rem 1rem 1.5rem 1rem; /* Matched to main content padding */
-    margin: 0 -1rem; /* Pull back to edges so cards can bleed if needed */
+    padding: 0.5rem 0 1.5rem 0; /* Standard vertical spacing, horizontal is handled by #main-content */
     scrollbar-width: none;
     -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
@@ -490,7 +489,7 @@ main {
     display: none;
 }
 .slider-item {
-    flex: 0 0 calc(100% - 2rem); /* Matches the Tithe/Donation card width exactly */
+    flex: 0 0 100%; /* Perfectly matches the width of the Tithe/Donation card */
     scroll-snap-align: center;
     transition: transform 0.3s ease;
 }
