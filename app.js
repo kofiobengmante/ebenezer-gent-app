@@ -383,11 +383,11 @@ function renderAuth(mainContent) {
                 
                 <div class="form-group">
                     <label>Email Address</label>
-                    <input type="email" id="auth-email" class="form-control" placeholder="member@ebenezerpcg.org" value="member@ebenezerpcg.org">
+                    <input type="email" id="auth-email" class="form-control" placeholder="member@ebenezerpcg.org">
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" id="auth-password" class="form-control" placeholder="Enter your password" value="password123">
+                    <input type="password" id="auth-password" class="form-control" placeholder="Enter your password">
                 </div>
                 <button class="btn-primary w-full mt-4" id="auth-submit-btn" onclick="handleAuth()">
                     ${authMode === 'login' ? 'Sign In' : 'Register'}
